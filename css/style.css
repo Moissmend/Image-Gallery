@@ -8,63 +8,42 @@ body{
     font-family: "Raleway", sans-serif;
 }
 
-h1{
-    color: #980811;
-    font-weight: 400;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 40px;
+.linea{
+    height: 5px;
+    width: 100%;
+    display: block;
 }
 
 .linea-index{
-    background: #3a02bd;
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, #0077cc, #0657a3, #003366);
 }
 
 .linea-autos{
-    background: #ff9500;
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, #ffcc00, #ff6600, #cc0000);
 }
 
 .linea-navidad{
-    background: red;
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, #ff4d4d, #fb0000, #db0000);
 }
 
 .linea-videojuegos{
-    background: rgb(0, 166, 255);
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, rgb(0, 166, 255), #0069cb, #004c98);
+}
+
+.linea-superheroes{
+    background: linear-gradient(to right, rgb(157, 0, 255), #9f00c5, #600080);
 }
 
 .linea-paraisos{
-    background: rgb(218, 159, 255);
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, rgb(157, 0, 255), #9f00c5, #600080);;
 }
 
 .linea-moderno{
-    background:  rgb(255, 44, 89);
-    height: 5px;
-    width: 100%;
-    display: block;
+    background: linear-gradient(to right, rgb(255, 44, 89), #ff6666, #cc0000);
 }
 
 
-.linea-superheroes{
-    background: rgb(157, 0, 255);
-    height: 5px;
-    width: 100%;
-    display: block;
-}
+
 
 .galeria{
     display: grid;
@@ -86,7 +65,7 @@ h1{
 
 .galeria > a{
     display: block;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     box-shadow: 0 0 6px rgb(0, 0,0,.5);
 }
@@ -184,51 +163,58 @@ body{
 
 
 .header-index{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #3a02bd;
+    background: linear-gradient(to right, #0077cc, #0657a3, #003366);
     margin-bottom: 20px
 }
 
 .header-autos{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #ff9500;
+    background: linear-gradient(to right, #ffcc00, #ff6600, #cc0000);
     margin-bottom: 20px
 }
 
 .header-navidad{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: red;
+    background: linear-gradient(to right, #ff4d4d, #fb0000, #db0000);
     margin-bottom: 20px
 }
 
 .header-videojuegos{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: rgb(0, 166, 255);
+    background: linear-gradient(to right, rgb(0, 166, 255), #0069cb, #004c98);
     margin-bottom: 20px
 }
 
 .header-superheroes{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: rgb(157, 0, 255);
+    background: linear-gradient(to right, rgb(157, 0, 255), #9f00c5, #600080);
     margin-bottom: 20px
 }
 
 .header-paraisos{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: rgb(218, 159, 255);
+    background: linear-gradient(to right, rgb(218, 159, 255), #b004dc, #6a058c);
     margin-bottom: 20px
 }
 
 .header-moderno{
+    position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: rgb(255, 44, 89);
+    background: linear-gradient(to right, rgb(255, 44, 89), #ff6666, #cc0000);
     margin-bottom: 20px
 }
 
@@ -311,4 +297,93 @@ footer{
     margin: 0 auto;
     text-align: center;
 }
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    top: 35%;
+    right: 1%;
+    position: absolute;
+}
+
+.bar{
+    display: flex;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+
+@media(max-width:812px){
+    .hamburger{
+        display: block;
+
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 90px;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    .nav-index{
+        background: linear-gradient(to right, #0077cc, #0657a3, #003366);
+    }
+
+    .nav-autos{
+        background: linear-gradient(to right, #ffcc00, #ff6600, #cc0000);
+    }
+    
+    .nav-navidad{
+        background: linear-gradient(to right, #ff4d4d, #fb0000, #db0000);
+    }
+
+    .nav-videojuegos{
+        background: linear-gradient(to right, rgb(0, 166, 255), #0069cb, #004c98);
+    }
+
+    .nav-superheroes{
+        background: linear-gradient(to right, rgb(157, 0, 255), #9f00c5, #600080);
+    }
+
+    .nav-paraisos{
+        background: linear-gradient(to right, rgb(218, 159, 255), #b004dc, #6a058c);
+    }
+
+    .nav-moderno{
+        background: linear-gradient(to right, rgb(255, 44, 89), #ff6666, #cc0000);
+    }
+
+    .nav-
+    
+        .nav-item{
+            margin: 16px 0;
+        }
+        .nav-menu.active{
+            left: 0;
+        }   
+        
+    
+
+}
+
+
 
